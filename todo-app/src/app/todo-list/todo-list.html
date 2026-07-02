@@ -1,0 +1,31 @@
+<h2>Todo List</h2>
+
+<input
+  type="text"
+  [(ngModel)]="newTodo"
+  placeholder="Enter a new todo"
+/>
+
+<button (click)="addTodo()">Add Todo</button>
+
+<div class="filters">
+  <button (click)="setFilter('all')" [class.active]="filter === 'all'">All</button>
+  <button (click)="setFilter('active')" [class.active]="filter === 'active'">Active</button>
+  <button (click)="setFilter('done')" [class.active]="filter === 'done'">Done</button>
+</div>
+
+<ul>
+  @for (todo of filteredTodos; track todo.id) {
+    <app-todo-item
+      [todo]="todo"
+      [editingTodoId]="editingTodoId"
+      [editingTitle]="editingTitle"
+      (toggle)="toggleTodo($event)"
+      (delete)="deleteTodo($event)"
+      (startEdit)="startEdit($event)"
+      (saveEdit)="saveEdit($event)"
+      (cancelEdit)="cancelEdit()"
+      (editingTitleChange)="editingTitle = $event"
+    />
+  }
+</ul>

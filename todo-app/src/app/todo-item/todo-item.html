@@ -1,0 +1,21 @@
+<li>
+  @if (editingTodoId === todo.id) {
+    <input
+      [ngModel]="editingTitle"
+      (ngModelChange)="editingTitleChange.emit($event)"
+    />
+    <button (click)="saveEdit.emit(todo)">Save</button>
+    <button (click)="cancelEdit.emit()">Cancel</button>
+  } @else {
+    <span
+      (click)="toggle.emit(todo)"
+      [style.textDecoration]="todo.done ? 'line-through' : 'none'"
+      [style.cursor]="'pointer'"
+    >
+      {{ todo.title }}
+    </span>
+
+    <button (click)="startEdit.emit(todo)">Edit</button>
+    <button (click)="delete.emit(todo.id)">Delete</button>
+  }
+</li>
