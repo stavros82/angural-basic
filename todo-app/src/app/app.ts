@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { TodoListComponent } from './todo-list/todo-list';
+import { TodoListComponent } from './todo/components/todo-list/todo-list';
 
 
 @Component({

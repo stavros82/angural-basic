@@ -1,4 +1,6 @@
-<li>
+
+
+<li [class.recent]="recentTodoId === todo.id">
   @if (editingTodoId === todo.id) {
     <input
       [ngModel]="editingTitle"
