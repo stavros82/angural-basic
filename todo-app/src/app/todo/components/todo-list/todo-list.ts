@@ -44,14 +44,26 @@ export class TodoListComponent implements OnInit {
     return this.todos;
   }
 
-  loadTodos(): Todo[] {
-    if (!isPlatformBrowser(this.platformId)) {
-      return [];
-    }
-
-    const saved = localStorage.getItem(this.storageKey);
-    return saved ? JSON.parse(saved) : [];
+loadTodos(): Todo[] {
+  if (!isPlatformBrowser(this.platformId)) {
+    return [];
   }
+
+  const saved = localStorage.getItem(this.storageKey);
+  return saved ? JSON.parse(saved) : this.getInitialTodos();
+}
+
+getInitialTodos(): Todo[] {
+  const initialTodos: Todo[] = [
+    { id: 1, title: 'Buy milk', done: false },
+    { id: 2, title: 'Walk the dog', done: false },
+    { id: 3, title: 'Learn Angular', done: true }
+  ];
+
+  localStorage.setItem(this.storageKey, JSON.stringify(initialTodos));
+  return initialTodos;
+}
+
 
   saveTodos() {
     if (!isPlatformBrowser(this.platformId)) return;
@@ -122,6 +134,8 @@ onDocumentClick(event: MouseEvent) {
 
   toggleTodo(todo: Todo) {
     todo.done = !todo.done;
+    this.filter = 'all';
+
     this.saveTodos();
   }
 
