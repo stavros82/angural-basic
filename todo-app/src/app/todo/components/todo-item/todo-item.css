@@ -7,27 +7,27 @@ li {
   margin-bottom: 0;
   padding: 18px 20px;
   border-radius: 22px;
-  background: rgba(15, 23, 42, 0.84);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 li:hover {
   transform: translateY(-1px);
-  border-color: rgba(59, 130, 246, 0.5);
+  border-color: rgba(96, 165, 250, 0.4);
 }
 
 li.recent {
-  background: rgba(59, 130, 246, 0.16) !important;
+  background: rgba(219, 234, 254, 0.85) !important;
   border-color: rgba(59, 130, 246, 0.45) !important;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16) !important;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12) !important;
 }
 
 li span {
   flex: 1 1 auto;
   min-width: 0;
-  color: #e2e8f0;
+  color: #0f172a;
   font-size: 1rem;
 }
 
@@ -39,14 +39,14 @@ li button {
   border: none;
   border-radius: 999px;
   padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
+  background: rgba(15, 23, 42, 0.05);
+  color: #334155;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 li button:hover {
-  background: rgba(59, 130, 246, 0.16);
-  color: #f8fafc;
+  background: rgba(96, 165, 250, 0.16);
+  color: #0f172a;
 }
 
 li input {
@@ -54,9 +54,9 @@ li input {
   flex: 1 1 auto;
   padding: 14px 16px;
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  background: rgba(15, 23, 42, 0.9);
-  color: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
 }
 
 li input:focus {
