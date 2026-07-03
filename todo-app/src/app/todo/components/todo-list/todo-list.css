@@ -1,38 +1,85 @@
+h2 {
+  margin: 0 0 18px;
+  font-size: 1.75rem;
+  color: #f8fafc;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.82);
+  color: #e2e8f0;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: rgba(99, 102, 241, 0.9);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 16px 30px rgba(59, 130, 246, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 36px rgba(59, 130, 246, 0.24);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.counter {
+  margin: 14px 0 20px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
 .filters {
   display: flex;
-  gap: 20px;
-  margin: 12px 0 16px;
-  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 18px;
 }
 
 .filters button {
   position: relative;
-  border: none;
-  background: transparent;
-  padding: 10px 0;
-  cursor: pointer;
-  font: inherit;
-  color: #6b7280;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.8);
+  color: #cbd5e1;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .filters button.active {
-  color: #1976d2;
-  font-weight: 600;
+  color: white;
+  border-color: rgba(59, 130, 246, 0.9);
+  background: rgba(59, 130, 246, 0.18);
 }
 
-.filters button.active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: #1976d2;
-  border-radius: 2px;
+.filters button:hover {
+  background: rgba(59, 130, 246, 0.14);
 }
-.counter {
-  margin: 8px 0 12px;
-  color: #666;
-  font-size: 0.95rem;
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
 }
 
