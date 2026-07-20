@@ -1,0 +1,38 @@
+<div class="container">
+     <div class="card mt-4">
+      <div class="row">
+        <div class="col">     
+            <h2 class="text-center">Create new Appointment</h2>
+        </div>
+      <div class="row mt-6">
+          <div class="col-md-4">
+                <input  class="form-control" [(ngModel)]="newAppointmentTitle" placeholder="Enter appointment title"  />
+          </div>
+          <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="newAppointmentDescription"placeholder="Enter appointment description"  />
+          </div>
+          <div class="col-md-4">
+               <input class="form-control" [(ngModel)]="newAppointmentDate" type="date" placeholder="Enter appointment date"  />
+          </div>
+          <div class="col-md-2">
+                <button class="btn btn-primary w-100" (click)="addAppointment()">Add Appointment</button>
+          </div>
+    </div>
+    </div>
+    <h2 class="text-center mt-4">Appointments List</h2>
+    <ul class="list-group mt-3">
+    @for (appointment of appointments; track appointment.id) {
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ appointment.title }}
+      {{ appointment.description }}
+      {{ appointment.date | date: 'mediumDate' }}
+        <button class="btn btn-danger" (click)="deleteAppointment(appointment.id)">Delete</button>
+    </li>
+    } @empty {
+     <li>No appointments found.</li>
+    }
+</ul>
+</div>
+
+
+
